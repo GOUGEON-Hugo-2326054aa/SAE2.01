@@ -3,6 +3,7 @@ package com.exemple.sae201;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
@@ -10,8 +11,10 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/exemple/sae201/chess.fxml"));
-        scene = new Scene(loader.load());
+        Board board = new Board();
+        VBox layout = new VBox();
+        layout.getChildren().add(board.getBoard());
+        Scene scene = new Scene(layout, 800, 800);
         stage.setTitle("Chess Game");
         stage.setScene(scene);
         stage.show();
