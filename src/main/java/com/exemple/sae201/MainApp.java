@@ -1,24 +1,15 @@
 package com.exemple.sae201;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.fxml.FXML;
+import javafx.scene.layout.VBox;
 
-public class MainApp extends Application {
+public class FullViewController {
+    @FXML
+    private VBox plateau;
 
-    @Override
-    public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/exemple/sae201/chess.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        stage.setTitle("Chess Game");
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
+    @FXML
+    public void initialize() {
+        Board board = new Board();
+        plateau.getChildren().add(board.getBoard());
     }
 }
