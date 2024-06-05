@@ -38,7 +38,7 @@
                         <Insets left="25.0" top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #656565;">
+                  <StackPane opacity="0.5" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #656565;">
                      <HBox.margin>
                         <Insets bottom="5.0" left="280.0" right="20.0" top="5.0" />
                      </HBox.margin>
@@ -510,7 +510,7 @@
                         <Insets left="25.0" top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #656565;">
+                  <StackPane opacity="0.5" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #656565;">
                      <children>
                         <Label text="10:00" textFill="WHITE">
                            <font>
@@ -587,13 +587,31 @@
                   <Insets bottom="25.0" top="25.0" />
                </VBox.margin>
                <font>
-                  <Font name="KacstDecorative" size="22.0" />
+                  <Font size="30.0" />
                </font>
             </MenuButton>
             <Button alignment="CENTER" centerShape="false" contentDisplay="CENTER" prefWidth="350.0" style="-fx-background-color: #9acd32;" text="Jouer" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Noto Sans Carian Regular" size="35.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" prefWidth="350.0" style="-fx-background-color: #00000020;" text="  Tournoi" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="35.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="250.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/torunament.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
