@@ -19,9 +19,9 @@ public class Board {
                 StackPane square = new StackPane();
                 square.setPrefSize(100, 100);
                 if ((i + j) % 2 == 0) {
-                    square.setStyle("-fx-background-color: #7D945D");
+                    square.setStyle("-fx-background-color: #637084");
                 } else {
-                    square.setStyle("-fx-background-color: #EEEED5");
+                    square.setStyle("-fx-background-color: #282f3e");
                 }
                 row.getChildren().add(square);
             }

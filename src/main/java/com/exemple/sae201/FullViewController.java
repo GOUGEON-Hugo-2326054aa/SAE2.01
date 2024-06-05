@@ -1,14 +1,16 @@
 package com.exemple.sae201;
+
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 public class FullViewController {
 
     @FXML
-    private Button button;
+    private Pane Board;
 
-    @FXML
     public void initialize() {
-        button.setOnAction(event -> System.out.println("Button clicked!"));
+        Board board = new Board();
+        Board.getChildren().add(board.getBoard());
     }
 }
