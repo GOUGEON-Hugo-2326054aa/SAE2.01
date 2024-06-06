@@ -1,11 +1,15 @@
+//controller
 package com.exemple.sae201;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
@@ -14,17 +18,15 @@ import javafx.util.Duration;
 public class FullViewController {
 
     @FXML
-    private VBox Play;
+    private VBox Play,Player, Game;
     @FXML
-    private VBox Game;
-    @FXML
-    private VBox Player;
+    private HBox ZoneB,ZoneW,Playbutton;
     @FXML
     private MenuButton TimerChooser;
     @FXML
-    private Label timerW;
+    private Label timerW,timerB,NB,NW;
     @FXML
-    private Label timerB;
+    private TextField BName,WName;
     @FXML
     private StackPane TimercadreW,TimercadreB;
     private Timeline timeline;
@@ -84,7 +86,25 @@ public class FullViewController {
         Player.setVisible(false);
         System.out.println("Game");
     }
-
+    public void Localplay(MouseEvent mouseEvent) {
+        Player.setVisible(true);
+        Play.setVisible(false);
+        Game.setVisible(false);
+        System.out.println("Player");
+    }
+    public void SendBName (MouseEvent mouseEvent) {
+        String Bname = BName.getText();
+        NB.setText(Bname);
+    }
+    public void SendWName (MouseEvent mouseEvent) {
+        String Wname = WName.getText();
+        NW.setText(Wname);
+    }
+    public void LocalStart(MouseEvent mouseEvent) {
+        ZoneB.setVisible(false);
+        ZoneW.setVisible(false);
+        Playbutton.setVisible(false);
+    }
 
 
 
