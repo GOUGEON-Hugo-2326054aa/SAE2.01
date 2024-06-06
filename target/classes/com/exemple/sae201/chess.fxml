@@ -11,12 +11,13 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER" prefHeight="950.0" prefWidth="1320.0" style="-fx-background-color:#302e2b" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exemple.sae201.FullViewController">
+<HBox fx:id="Partie" alignment="CENTER" maxHeight="920.0" maxWidth="1320.0" minHeight="950.0" minWidth="1320.0" prefHeight="950.0" prefWidth="1320.0" style="-fx-background-color:#302e2b" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exemple.sae201.FullViewController">
    <children>
       <VBox alignment="BASELINE_CENTER" prefWidth="800.0">
          <children>
@@ -38,12 +39,12 @@
                         <Insets left="25.0" top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <StackPane opacity="0.5" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #656565;">
+                  <StackPane fx:id="TimercardeB" opacity="0.5" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #656565;">
                      <HBox.margin>
                         <Insets bottom="5.0" left="280.0" right="20.0" top="5.0" />
                      </HBox.margin>
                      <children>
-                        <Label text="10:00" textFill="WHITE">
+                        <Label fx:id="timerB" alignment="CENTER" text="10:00" textFill="WHITE">
                            <font>
                               <Font size="30.0" />
                            </font>
@@ -74,12 +75,12 @@
                   <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="7" GridPane.rowIndex="7">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="7" GridPane.rowIndex="7">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -91,7 +92,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -103,7 +104,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="2">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="2">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -115,7 +116,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="4">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="4">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -127,7 +128,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -139,11 +140,11 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.rowIndex="4" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.rowIndex="4" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="2" GridPane.rowIndex="6">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -155,7 +156,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.rowIndex="6">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.rowIndex="6">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -167,8 +168,8 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="5" GridPane.rowIndex="1">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -180,7 +181,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="6">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="6">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -192,7 +193,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="7" GridPane.rowIndex="1">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -204,10 +205,10 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="1" GridPane.rowIndex="7">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -219,7 +220,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="5" GridPane.rowIndex="7">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="5" GridPane.rowIndex="7">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -231,7 +232,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="3" GridPane.rowIndex="7">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -243,7 +244,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="4" GridPane.rowIndex="6">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -255,7 +256,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="6" GridPane.rowIndex="6">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="6" GridPane.rowIndex="6">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -267,8 +268,8 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -280,7 +281,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.rowIndex="1">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.rowIndex="1">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -292,7 +293,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="5">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="5">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -304,7 +305,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="4" GridPane.rowIndex="1">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -316,7 +317,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="3">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="3">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -328,7 +329,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -340,7 +341,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="1">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="1">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -352,12 +353,12 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="6" GridPane.rowIndex="1">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -369,7 +370,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="7">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="7">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -381,18 +382,18 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.rowIndex="3" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.rowIndex="5" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="7" GridPane.rowIndex="6">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.rowIndex="3" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.rowIndex="5" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="7" GridPane.rowIndex="6">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -404,7 +405,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="5" GridPane.rowIndex="6">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="5" GridPane.rowIndex="6">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -416,7 +417,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="6" GridPane.rowIndex="7">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="6" GridPane.rowIndex="7">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -428,7 +429,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="4" GridPane.rowIndex="7">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -440,7 +441,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="3" GridPane.rowIndex="6">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -452,7 +453,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="2" GridPane.rowIndex="7">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -464,7 +465,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -476,7 +477,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.rowIndex="7">
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #282f3e;" GridPane.rowIndex="7">
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -488,8 +489,8 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.rowIndex="2" />
-                  <StackPane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.rowIndex="2" />
+                  <StackPane minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #637084;" GridPane.columnIndex="7" GridPane.rowIndex="5" />
                </children>
             </GridPane>
             <HBox alignment="TOP_CENTER" minHeight="60.0" prefHeight="75.0" prefWidth="800.0">
@@ -510,9 +511,9 @@
                         <Insets left="25.0" top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <StackPane opacity="0.5" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #656565;">
+                  <StackPane fx:id="TimercardeW" opacity="0.5" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #656565;">
                      <children>
-                        <Label text="10:00" textFill="WHITE">
+                        <Label fx:id="timerW" text="10:00" textFill="WHITE">
                            <font>
                               <Font size="30.0" />
                            </font>
@@ -526,100 +527,279 @@
             </HBox>
          </children>
          <HBox.margin>
-            <Insets right="10.0" />
+            <Insets left="50.0" right="10.0" />
          </HBox.margin>
       </VBox>
-      <VBox alignment="TOP_CENTER" maxWidth="400.0" minWidth="400.0" prefHeight="950.0" prefWidth="400.0" style="-fx-background-color: #262522;">
+      <Pane maxWidth="400.0" minWidth="400.0" prefHeight="950.0" prefWidth="400.0">
          <children>
-            <HBox alignment="TOP_CENTER" prefHeight="10.0" prefWidth="500.0">
+            <VBox fx:id="Play" alignment="TOP_CENTER" maxWidth="400.0" minWidth="400.0" prefHeight="950.0" prefWidth="400.0" style="-fx-background-color: #262522;">
                <children>
-                  <Button alignment="CENTER" contentDisplay="TOP" minHeight="60.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="133.333333333" style="-fx-background-color: #262522;" text="Nouvelle Partie" textAlignment="CENTER" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                     <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/newgame.png" />
-                           </image>
+                  <HBox alignment="TOP_CENTER" prefHeight="10.0" prefWidth="500.0">
+                     <children>
+                        <Button alignment="CENTER" contentDisplay="TOP" minHeight="60.0" mnemonicParsing="false" onMouseClicked="#NewGame" prefHeight="60.0" prefWidth="133.333333333" style="-fx-background-color: #262522;" text="Nouvelle Partie" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/newgame.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button alignment="CENTER" contentDisplay="TOP" minHeight="60.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="133.333333333" style="-fx-background-color: #21201d;" text="Partie" textAlignment="CENTER" textFill="WHITE">
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" minHeight="60.0" mnemonicParsing="false" onMouseClicked="#Game" prefHeight="60.0" prefWidth="133.333333333" style="-fx-background-color: #21201d;" text="Partie" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/board.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" minHeight="60.0" mnemonicParsing="false" onMouseClicked="#Player" prefHeight="60.0" prefWidth="133.333333333" style="-fx-background-color: #21201d;" text="Joueurs" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/joueur.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <MenuButton fx:id="TimerChooser" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="350.0" style="-fx-background-color: #262522;" text="    10 min    " textAlignment="CENTER" textFill="WHITE">
+                     <items>
+                        <MenuItem onAction="#timeset5" text="5 min" />
+                        <MenuItem onAction="#timeset10" text="10 min" />
+                        <MenuItem onAction="#timeset15" text="15 min" />
+                     </items>
+                     <VBox.margin>
+                        <Insets bottom="40.0" top="40.0" />
+                     </VBox.margin>
                      <font>
-                        <Font size="16.0" />
+                        <Font size="30.0" />
                      </font>
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@img/board.png" />
+                              <Image url="@img/temps-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </MenuButton>
+                  <Button alignment="CENTER" centerShape="false" contentDisplay="CENTER" onMouseClicked="#Start" prefWidth="350.0" style="-fx-background-color: #9acd32;" text="Jouer" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Noto Sans Carian Regular" size="35.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="75.0" minWidth="350.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="350.0" style="-fx-background-color: #00000020;" text="  Tournoi" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="250.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/tournament.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox fx:id="Game" alignment="TOP_CENTER" maxWidth="400.0" minWidth="400.0" prefHeight="950.0" prefWidth="400.0" style="-fx-background-color: #262522;" visible="false">
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="10.0" prefWidth="500.0">
+                     <children>
+                        <Button alignment="CENTER" contentDisplay="TOP" minHeight="60.0" mnemonicParsing="false" onMouseClicked="#NewGame" prefHeight="60.0" prefWidth="133.333333333" style="-fx-background-color: #21201d;" text="Nouvelle Partie" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/newgame.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" minHeight="60.0" mnemonicParsing="false" onMouseClicked="#Game" prefHeight="60.0" prefWidth="133.333333333" style="-fx-background-color: #262522;" text="Partie" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/board.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" minHeight="60.0" mnemonicParsing="false" onMouseClicked="#Player" prefHeight="60.0" prefWidth="133.333333333" style="-fx-background-color: #21201d;" text="Joueurs" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/joueur.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label text="Choisissez un mode de jeu" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button maxHeight="75.0" maxWidth="350.0" minHeight="75.0" minWidth="350.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="350.0" style="-fx-background-color: #9acd32;" text="   Jouer en Local     " textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="100.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/localplay.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="TOP" minHeight="60.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="133.333333333" style="-fx-background-color: #21201d;" text="Joueurs" textAlignment="CENTER" textFill="WHITE">
+                  <Button layoutX="35.0" layoutY="223.0" maxHeight="75.0" maxWidth="350.0" minHeight="75.0" minWidth="350.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="350.0" style="-fx-background-color: #0000004a;" text="Jouer contre un Bot" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font size="16.0" />
+                        <Font size="25.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets top="125.0" />
+                     </VBox.margin>
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@img/joueur.png" />
+                              <Image url="@img/bot.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                </children>
-            </HBox>
-            <MenuButton alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="350.0" style="-fx-background-color: #262522;" text="10 min" textAlignment="CENTER" textFill="WHITE">
-               <items>
-                  <MenuItem text="5 min" />
-                  <MenuItem text="10 min" />
-                  <MenuItem text="15 min" />
-               </items>
-               <VBox.margin>
-                  <Insets bottom="25.0" top="25.0" />
-               </VBox.margin>
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </MenuButton>
-            <Button alignment="CENTER" centerShape="false" contentDisplay="CENTER" prefWidth="350.0" style="-fx-background-color: #9acd32;" text="Jouer" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Noto Sans Carian Regular" size="35.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefWidth="350.0" style="-fx-background-color: #00000020;" text="  Tournoi" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font size="35.0" />
-               </font>
-               <VBox.margin>
-                  <Insets top="250.0" />
-               </VBox.margin>
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/torunament.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
+            </VBox>
+            <VBox fx:id="Player" alignment="TOP_CENTER" maxWidth="400.0" minWidth="400.0" prefHeight="950.0" prefWidth="400.0" style="-fx-background-color: #262522;" visible="false">
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="10.0" prefWidth="500.0">
+                     <children>
+                        <Button alignment="CENTER" contentDisplay="TOP" minHeight="60.0" mnemonicParsing="false" onMouseClicked="#NewGame" prefHeight="60.0" prefWidth="133.333333333" style="-fx-background-color: #21201d;" text="Nouvelle Partie" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/newgame.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" minHeight="60.0" mnemonicParsing="false" onMouseClicked="#Game" prefHeight="60.0" prefWidth="133.333333333" style="-fx-background-color: #21201d;" text="Partie" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/board.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" minHeight="60.0" mnemonicParsing="false" onMouseClicked="#Player" prefHeight="60.0" prefWidth="133.333333333" style="-fx-background-color: #262522;" text="Joueurs" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/joueur.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
          </children>
          <HBox.margin>
             <Insets left="75.0" />
          </HBox.margin>
-      </VBox>
+      </Pane>
    </children>
 </HBox>
