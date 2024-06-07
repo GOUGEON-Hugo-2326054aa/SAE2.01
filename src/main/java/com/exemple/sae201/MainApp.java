@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/exemple/sae201/chess.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/exemple/sae201/View/chess.fxml"));
         Scene scene = new Scene(loader.load(),1320,950);
         stage.setTitle("Chess Game");
         stage.setScene(scene);

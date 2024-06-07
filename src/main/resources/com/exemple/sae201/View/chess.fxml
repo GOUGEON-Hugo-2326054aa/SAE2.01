@@ -20,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="950.0" maxWidth="1320.0" minHeight="950.0" minWidth="1320.0" prefHeight="950.0" prefWidth="1320.0" style="-fx-background-color: #302e2b;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exemple.sae201.FullViewController">
+<Pane maxHeight="950.0" maxWidth="1320.0" minHeight="950.0" minWidth="1320.0" prefHeight="950.0" prefWidth="1320.0" style="-fx-background-color: #302e2b;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exemple.sae201.Controller.FullViewController">
    <children>
       <BorderPane maxHeight="950.0" maxWidth="1320.0" prefHeight="950.0" prefWidth="1320.0" visible="false">
          <bottom>
@@ -115,7 +115,7 @@
                               <Insets left="15.0" top="10.0" />
                            </HBox.margin>
                            <image>
-                              <Image url="@img/pp1.png" />
+                              <Image url="@../img/pp1.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="NB" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="Noirs" textAlignment="CENTER" textFill="WHITE">
@@ -171,7 +171,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wr.png" />
+                                    <Image url="@../img/wr.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -183,7 +183,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bp.png" />
+                                    <Image url="@../img/bp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -195,7 +195,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bb.png" />
+                                    <Image url="@../img/bb.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -207,7 +207,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bk.png" />
+                                    <Image url="@../img/bk.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -219,7 +219,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bp.png" />
+                                    <Image url="@../img/bp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -235,7 +235,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wp.png" />
+                                    <Image url="@../img/wp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -247,7 +247,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wp.png" />
+                                    <Image url="@../img/wp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -260,7 +260,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bp.png" />
+                                    <Image url="@../img/bp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -272,7 +272,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bn.png" />
+                                    <Image url="@../img/bn.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -284,7 +284,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bp.png" />
+                                    <Image url="@../img/bp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -299,7 +299,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wn.png" />
+                                    <Image url="@../img/wn.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -311,7 +311,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wb.png" />
+                                    <Image url="@../img/wb.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -323,7 +323,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wq.png" />
+                                    <Image url="@../img/wq.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -335,7 +335,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wp.png" />
+                                    <Image url="@../img/wp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -347,7 +347,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wp.png" />
+                                    <Image url="@../img/wp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -360,7 +360,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/br.png" />
+                                    <Image url="@../img/br.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -372,7 +372,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bp.png" />
+                                    <Image url="@../img/bp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -384,7 +384,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bb.png" />
+                                    <Image url="@../img/bb.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -396,7 +396,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bp.png" />
+                                    <Image url="@../img/bp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -408,7 +408,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bq.png" />
+                                    <Image url="@../img/bq.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -420,7 +420,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bp.png" />
+                                    <Image url="@../img/bp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -432,7 +432,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bn.png" />
+                                    <Image url="@../img/bn.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -449,7 +449,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bp.png" />
+                                    <Image url="@../img/bp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -461,7 +461,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/br.png" />
+                                    <Image url="@../img/br.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -484,7 +484,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wp.png" />
+                                    <Image url="@../img/wp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -496,7 +496,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wp.png" />
+                                    <Image url="@../img/wp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -508,7 +508,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wn.png" />
+                                    <Image url="@../img/wn.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -520,7 +520,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wk.png" />
+                                    <Image url="@../img/wk.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -532,7 +532,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wp.png" />
+                                    <Image url="@../img/wp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -544,7 +544,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wb.png" />
+                                    <Image url="@../img/wb.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -556,7 +556,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wp.png" />
+                                    <Image url="@../img/wp.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -568,7 +568,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/wr.png" />
+                                    <Image url="@../img/wr.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="OPEN_HAND" />
@@ -584,7 +584,7 @@
                      <children>
                         <ImageView fitHeight="50.0" fitWidth="50.0" preserveRatio="true">
                            <image>
-                              <Image url="@img/pp2.png" />
+                              <Image url="@../img/pp2.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="15.0" top="10.0" />
@@ -633,7 +633,7 @@
                                  <graphic>
                                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@img/newgame.png" />
+                                          <Image url="@../img/newgame.png" />
                                        </image>
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
@@ -651,7 +651,7 @@
                                  <graphic>
                                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@img/board.png" />
+                                          <Image url="@../img/board.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -666,7 +666,7 @@
                                  <graphic>
                                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@img/joueur.png" />
+                                          <Image url="@../img/joueur.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -691,7 +691,7 @@
                            <graphic>
                               <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/temps-removebg-preview.png" />
+                                    <Image url="@../img/temps-removebg-preview.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -717,7 +717,7 @@
                            <graphic>
                               <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/tournament.png" />
+                                    <Image url="@../img/tournament.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -741,7 +741,7 @@
                                  <graphic>
                                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@img/newgame.png" />
+                                          <Image url="@../img/newgame.png" />
                                        </image>
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
@@ -759,7 +759,7 @@
                                  <graphic>
                                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@img/board.png" />
+                                          <Image url="@../img/board.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -774,7 +774,7 @@
                                  <graphic>
                                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@img/joueur.png" />
+                                          <Image url="@../img/joueur.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -802,7 +802,7 @@
                            <graphic>
                               <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/localplay.png" />
+                                    <Image url="@../img/localplay.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -820,7 +820,7 @@
                            <graphic>
                               <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bot.png" />
+                                    <Image url="@../img/bot.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -841,7 +841,7 @@
                                  <graphic>
                                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@img/newgame.png" />
+                                          <Image url="@../img/newgame.png" />
                                        </image>
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
@@ -859,7 +859,7 @@
                                  <graphic>
                                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@img/board.png" />
+                                          <Image url="@../img/board.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -874,7 +874,7 @@
                                  <graphic>
                                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@img/joueur.png" />
+                                          <Image url="@../img/joueur.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -888,7 +888,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/image-removebg-preview.png" />
+                                    <Image url="@../img/image-removebg-preview.png" />
                                  </image>
                               </ImageView>
                               <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="VS" textAlignment="CENTER">
@@ -898,7 +898,7 @@
                               </Text>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bn.png" />
+                                    <Image url="@../img/bn.png" />
                                  </image>
                               </ImageView>
                            </children>
@@ -920,7 +920,7 @@
                                  <graphic>
                                     <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@img/check.png" />
+                                          <Image url="@../img/check.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -947,7 +947,7 @@
                                  <graphic>
                                     <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@img/check.png" />
+                                          <Image url="@../img/check.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -983,7 +983,7 @@
                            <children>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/image-removebg-preview.png" />
+                                    <Image url="@../img/image-removebg-preview.png" />
                                  </image>
                               </ImageView>
                               <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="VS" textAlignment="CENTER">
@@ -993,7 +993,7 @@
                               </Text>
                               <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bn.png" />
+                                    <Image url="@../img/bn.png" />
                                  </image>
                               </ImageView>
                            </children>
