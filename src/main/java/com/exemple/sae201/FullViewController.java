@@ -1,112 +1,134 @@
 //controller
 package com.exemple.sae201;
 
-import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Paint;
 import javafx.util.Duration;
 
 public class FullViewController {
 
     @FXML
-    private VBox Play,Player, Game;
+    private VBox Play,Player, Game,Gameplay;
     @FXML
-    private HBox ZoneB,ZoneW,Playbutton;
+    private HBox ZoneB,ZoneW,Playbutton,Tournament,Partie;
     @FXML
     private MenuButton TimerChooser;
     @FXML
-    private Label timerW,timerB,NB,NW;
+    private Label timerW,timerB,NB,NW,coup;
     @FXML
     private TextField BName,WName;
+    @FXML
+    private ImageView WP1;
+    @FXML
+    private StackPane A3;
+    @FXML
+    private Button Ready;
     @FXML
     private StackPane TimercadreW,TimercadreB;
     private Timeline timeline;
     private int timeSeconds;
+    private StackPane currentcase;
+    private boolean setbname,setwnam = false;
 
-    public void Game(MouseEvent mouseEvent) {
+    public void Game(MouseEvent mouseEvent) {           //affiche le menu Game
         Game.setVisible(true);
         Play.setVisible(false);
         Player.setVisible(false);
-        System.out.println("Game");
     }
 
-    public void NewGame(MouseEvent mouseEvent) {
+    public void NewGame(MouseEvent mouseEvent) {        //affiche le menu NewGame
         Play.setVisible(true);
         Game.setVisible(false);
         Player.setVisible(false);
-        System.out.println("Play");
     }
 
-    public void Player(MouseEvent mouseEvent) {
+    public void Player(MouseEvent mouseEvent) {         //affiche le menu Player
         Player.setVisible(true);
         Play.setVisible(false);
         Game.setVisible(false);
-        System.out.println("Player");
+        Ready.setVisible(false);
     }
 
-    public void timeset5(Event event) {
+    public void timeset5(Event event){                   //set le timer a 5 minutes
         TimerChooser.setText("     5 min    ");
         timerW.setText("5:00");
         timerB.setText("5:00");
-        timeSeconds = 300; // 5 minutes in seconds
-        System.out.println("time5");
+        timeSeconds = 300; // 5 minutes en secondes
         timeline.stop();
     }
 
-    public void timeset10(Event event) {
+    public void timeset10(Event event) {                // set le timer a 10 minutes
         TimerChooser.setText("    10 min    ");
         timerW.setText("10:00");
         timerB.setText("10:00");
-        timeSeconds = 600; // 10 minutes in seconds
-        System.out.println("time10");
+        timeSeconds = 600; // 10 minutes en secondes
         timeline.stop();
     }
 
-    public void timeset15(Event event) {
+    public void timeset15(Event event) {                //set le timer a 15 minutes
         TimerChooser.setText("    15 min    ");
         timerW.setText("15:00");
         timerB.setText("15:00");
-        timeSeconds = 900; // 15 minutes in seconds
-        System.out.println("time15");
+        timeSeconds = 900; // 15 minutes en secondes
         timeline.stop();
     }
-
-    public void Start(MouseEvent mouseEvent) {
-        Game.setVisible(true);
-        Play.setVisible(false);
-        Player.setVisible(false);
-        System.out.println("Game");
-    }
-    public void Localplay(MouseEvent mouseEvent) {
-        Player.setVisible(true);
-        Play.setVisible(false);
-        Game.setVisible(false);
-        System.out.println("Player");
-    }
-    public void SendBName (MouseEvent mouseEvent) {
+    public void SendBName (MouseEvent mouseEvent) {   //set le nom des noirs
         String Bname = BName.getText();
         NB.setText(Bname);
+        setbname=true;
+        if (setwnam == true && setbname == true) {
+            Ready.setVisible(true);
+        }
     }
-    public void SendWName (MouseEvent mouseEvent) {
+    public void SendWName (MouseEvent mouseEvent) {   //set le nom des blancs
         String Wname = WName.getText();
         NW.setText(Wname);
-    }
-    public void LocalStart(MouseEvent mouseEvent) {
-        ZoneB.setVisible(false);
-        ZoneW.setVisible(false);
-        Playbutton.setVisible(false);
+        setwnam = true;
+        if (setwnam == true && setbname == true){
+            Ready.setVisible(true);
+        }
     }
 
+    public void LocalStart(MouseEvent mouseEvent) {     //start la partie locale
+        if (setwnam == true && setbname == true) {
+            Gameplay.setVisible(true);
+            Game.setVisible(false);
+            Play.setVisible(false);
+            Player.setVisible(false);
+        }
+    }
+    public void FFB(MouseEvent mouseEvent){
+        Play.setVisible(true);
+        Gameplay.setVisible(false);
+        Game.setVisible(false);
+        Player.setVisible(false);
+    }
+    public void FFW(MouseEvent mouseEvent){
+        Play.setVisible(true);
+        Gameplay.setVisible(false);
+        Game.setVisible(false);
+        Player.setVisible(false);
+    }
+    public void tournopen(MouseEvent mouseEvent){
+        Partie.setVisible(false);
+        Tournament.setVisible(true);
+    }
 
+//    public void initialize(){
+//        coup.setText("test\ntest");
+//    }
 
 
 
