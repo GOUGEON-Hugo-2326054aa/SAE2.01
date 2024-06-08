@@ -23,9 +23,9 @@ public class FullViewController {
     @FXML
     private MenuButton TimerChooser;
     @FXML
-    private Label timerW,timerB,NB,NW,coup;
+    private Label timerW,timerB,NB,NW,coup,g1,g2,g3,g4,DMG1,DMG2,DMP1,DMP2;
     @FXML
-    private TextField BName,WName;
+    private TextField BName,WName,j1,j2,j3,j4,j5,j6,j7,j8;
     @FXML
     private ImageView WP1;
     @FXML
@@ -121,6 +121,29 @@ public class FullViewController {
     public void tournopen(MouseEvent mouseEvent){
         Partie.setVisible(false);
         Tournament.setVisible(true);
+    }
+    public void tourquit(MouseEvent mouseEvent) {
+        Partie.setVisible(true);
+        Tournament.setVisible(false);
+    }
+    public void tourstart(MouseEvent mouseEvent){
+        String J1 = j1.getText();
+        String J2 = j2.getText();
+        String J3 = j3.getText();
+        String J4 = j4.getText();
+        String J5 = j5.getText();
+        String J6 = j6.getText();
+        String J7 = j7.getText();
+        String J8 = j8.getText();
+        g1.setText(J1);
+        g2.setText(J3);
+        g3.setText(J6);
+        g4.setText(J8);
+        DMG1.setText(J1);
+        DMG2.setText(J6);
+        DMP1.setText(J3);
+        DMP2.setText(J8);
+
     }
 
 //    public void initialize(){
