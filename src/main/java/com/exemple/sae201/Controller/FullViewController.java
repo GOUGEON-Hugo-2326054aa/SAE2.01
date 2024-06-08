@@ -4,15 +4,19 @@ package com.exemple.sae201.Controller;
 import javafx.animation.Timeline;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
+
+import java.io.IOException;
 
 public class FullViewController {
 
@@ -38,6 +42,10 @@ public class FullViewController {
     private int timeSeconds;
     private StackPane currentcase;
     private boolean setbname,setwnam = false;
+    private GridPane boardView ;
+    @FXML
+    private StackPane boardContainer;
+    private FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/exemple/sae201/View/BoardView.fxml"));
 
     public void Game(MouseEvent mouseEvent) {           //affiche le menu Game
         Game.setVisible(true);
@@ -82,8 +90,7 @@ public class FullViewController {
         timeline.stop();
     }
     public void SendBName (MouseEvent mouseEvent) {   //set le nom des noirs
-        String Bname = BName.getText();
-        NB.setText(Bname);
+        NB.setText(BName.getText());
         setbname=true;
         if (setwnam == true && setbname == true) {
             Ready.setVisible(true);
@@ -93,30 +100,43 @@ public class FullViewController {
         String Wname = WName.getText();
         NW.setText(Wname);
         setwnam = true;
+        System.out.println(Wname);
         if (setwnam == true && setbname == true){
             Ready.setVisible(true);
         }
     }
 
-    public void LocalStart(MouseEvent mouseEvent) {     //start la partie locale
-        if (setwnam == true && setbname == true) {
+    public void LocalStart(MouseEvent mouseEvent) throws IOException {     //start la partie locale
+        if (setwnam == true && setbname == true && BName != null && WName != null) {
             Gameplay.setVisible(true);
             Game.setVisible(false);
             Play.setVisible(false);
             Player.setVisible(false);
+            loader.setController(new BoardController());
+            boardView = loader.load();
+            reset();
+            BoardController boardController = loader.getController();
+            boardController.initPieces();
+            boardController.initDeplacement();
         }
     }
-    public void FFB(MouseEvent mouseEvent){
+    public void FFB(MouseEvent mouseEvent) throws IOException {
         Play.setVisible(true);
         Gameplay.setVisible(false);
         Game.setVisible(false);
         Player.setVisible(false);
+        reset();
     }
-    public void FFW(MouseEvent mouseEvent){
+    public void FFW(MouseEvent mouseEvent) throws IOException {
         Play.setVisible(true);
         Gameplay.setVisible(false);
         Game.setVisible(false);
         Player.setVisible(false);
+        reset();
+    }
+    private void reset() throws IOException {
+        boardContainer.getChildren().clear();
+        boardContainer.getChildren().add(boardView);
     }
     public void tournopen(MouseEvent mouseEvent){
         Partie.setVisible(false);

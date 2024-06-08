@@ -10,81 +10,91 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="950.0" maxWidth="1320.0" minHeight="950.0" minWidth="1320.0" prefHeight="950.0" prefWidth="1320.0" style="-fx-background-color: #302e2b;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exemple.sae201.Controller.FullViewController">
+<Pane maxHeight="950.0" maxWidth="1320.0" minHeight="950.0" minWidth="1320.0" prefHeight="950.0" prefWidth="1320.0" style="-fx-background-color: #302e2b;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exemple.sae201.Controller.FullViewController">
    <children>
-      <BorderPane maxHeight="950.0" maxWidth="1320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1320.0">
+      <BorderPane maxHeight="950.0" maxWidth="1320.0" prefHeight="950.0" prefWidth="1320.0" visible="false">
+         <bottom>
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #9acd32;" text="Commencer" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="50.0" />
+               </BorderPane.margin>
+            </Button>
+         </bottom>
          <left>
-            <VBox maxWidth="200.0" prefHeight="828.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <VBox maxWidth="200.0" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextField fx:id="j1" promptText="Joueur 1">
+                  <TextField promptText="Joueur 1">
                      <font>
                         <Font size="18.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="50.0" />
+                        <Insets top="75.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="j2" promptText="Joueur 2">
+                  <TextField promptText="Joueur 2">
                      <font>
                         <Font size="18.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="70.0" />
+                        <Insets top="75.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="j3" promptText="Joueur 3">
+                  <TextField promptText="Joueur 3">
                      <font>
                         <Font size="18.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="70.0" />
+                        <Insets top="75.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="j4" promptText="Joueur 4">
+                  <TextField promptText="Joueur 4">
                      <font>
                         <Font size="18.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="70.0" />
+                        <Insets top="75.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="j5" promptText="Joueur 5">
+                  <TextField promptText="Joueur 5">
                      <font>
                         <Font size="18.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="70.0" />
+                        <Insets top="75.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="j6" promptText="Joueur 6">
+                  <TextField promptText="Joueur 6">
                      <font>
                         <Font size="18.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="70.0" />
+                        <Insets top="75.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="j7" promptText="Joueur 7">
+                  <TextField promptText="Joueur 7">
                      <font>
                         <Font size="18.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="70.0" />
+                        <Insets top="75.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="j8" promptText="Joueur 8">
+                  <TextField promptText="Joueur 8">
                      <font>
                         <Font size="18.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="70.0" />
+                        <Insets top="75.0" />
                      </VBox.margin>
                   </TextField>
                </children>
@@ -93,178 +103,8 @@
                </BorderPane.margin>
             </VBox>
          </left>
-         <center>
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-               <children>
-                  <VBox maxWidth="200.0" prefHeight="828.0" prefWidth="200.0">
-                     <children>
-                        <Label fx:id="g1" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="Gagnant 1/2" textFill="WHITE">
-                           <VBox.margin>
-                              <Insets top="50.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="g2" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="Gagnant 3/4" textFill="WHITE">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="170.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label fx:id="g3" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="155.0" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="Gagnant 5/6" textFill="WHITE">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="170.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label fx:id="g4" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="155.0" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="Gagnant 7/8" textFill="WHITE">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="170.0" />
-                           </VBox.margin>
-                        </Label>
-                     </children>
-                     <HBox.margin>
-                        <Insets left="30.0" />
-                     </HBox.margin>
-                  </VBox>
-                  <VBox maxWidth="200.0" prefHeight="828.0" prefWidth="200.0">
-                     <children>
-                        <Label fx:id="DMG1" alignment="CENTER" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="Gagnant 1/.../4" textFill="WHITE">
-                           <VBox.margin>
-                              <Insets top="160.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="DMP1" alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="Perdant 1/.../4" textFill="WHITE">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="130.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label fx:id="DMP2" alignment="CENTER" layoutX="10.0" layoutY="155.0" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="Perdant 5/.../8" textFill="WHITE">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="50.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label fx:id="DMG2" alignment="CENTER" layoutX="10.0" layoutY="155.0" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="Gagnant 5/.../8" textFill="WHITE">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="130.0" />
-                           </VBox.margin>
-                        </Label>
-                     </children>
-                     <HBox.margin>
-                        <Insets left="140.0" />
-                     </HBox.margin>
-                  </VBox>
-               </children>
-            </HBox>
-         </center>
-         <right>
-            <VBox maxWidth="200.0" prefHeight="828.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <TextField promptText="Joueur 1">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="50.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <TextField promptText="Joueur 8">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="70.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <TextField promptText="Joueur 2">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="70.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <TextField promptText="Joueur 3">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="70.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <TextField promptText="Joueur 4">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="70.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <TextField promptText="Joueur 5">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="70.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <TextField promptText="Joueur 6">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="70.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <TextField promptText="Joueur 7">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="70.0" />
-                     </VBox.margin>
-                  </TextField>
-               </children>
-            </VBox>
-         </right>
-         <bottom>
-            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#tourstart" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #9acd32;" text="Commencer">
-                     <HBox.margin>
-                        <Insets right="310.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button alignment="CENTER" layoutX="1130.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#tourquit" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #9acd32;" text="Quitter">
-                     <HBox.margin>
-                        <Insets right="50.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
-         </bottom>
       </BorderPane>
-      <HBox fx:id="Partie" alignment="CENTER" maxHeight="920.0" maxWidth="1320.0" minHeight="950.0" minWidth="1320.0" prefHeight="950.0" prefWidth="1320.0" style="-fx-background-color:#302e2b" visible="false">
+      <HBox fx:id="Partie"  alignment="CENTER" maxHeight="920.0" maxWidth="1320.0" minHeight="950.0" minWidth="1320.0" prefHeight="950.0" prefWidth="1320.0" style="-fx-background-color:#302e2b">
          <children>
             <VBox alignment="BASELINE_CENTER" prefWidth="800.0">
                <children>
@@ -300,7 +140,11 @@
                         </StackPane>
                      </children>
                   </HBox>
-                  <fx:include source="BoardView.fxml" />
+                  <StackPane minHeight="800" minWidth="800" fx:id="boardContainer">
+                     <children>
+                        <fx:include source="BoardView.fxml"></fx:include>
+                     </children>
+                  </StackPane>
                   <HBox alignment="TOP_CENTER" minHeight="60.0" prefHeight="75.0" prefWidth="800.0">
                      <children>
                         <ImageView fitHeight="50.0" fitWidth="50.0" preserveRatio="true">
