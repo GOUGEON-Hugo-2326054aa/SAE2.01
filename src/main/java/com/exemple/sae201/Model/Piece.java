@@ -1,17 +1,17 @@
 package com.exemple.sae201.Model;
 
-abstract class Piece {
-    private String couleur;
+public abstract class Piece {
+    private char couleur;
     private int x;
     private int y;
 
-    public Piece(String couleur, int x, int y) {
+    public Piece(char couleur, int x, int y) {
         this.couleur = couleur;
         this.x = x;
         this.y = y;
     }
 
-    public String getCouleur() {
+    public char getCouleur() {
         return couleur;
     }
 
