@@ -9,6 +9,7 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -19,7 +20,9 @@ public class FullViewController {
     @FXML
     private VBox Play,Player, Game,Gameplay;
     @FXML
-    private HBox ZoneB,ZoneW,Playbutton,Tournament,Partie;
+    private HBox ZoneB,ZoneW,Playbutton,Partie;
+    @FXML
+    private BorderPane Tournament;
     @FXML
     private MenuButton TimerChooser;
     @FXML
