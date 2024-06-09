@@ -52,26 +52,39 @@ public class FullViewController {
     @FXML
     private StackPane boardContainer;
 
-    public void Game(MouseEvent mouseEvent) {           //affiche le menu Game
+    /**
+     * Affiche le menu "Game" et masque les menus "Play" et "Player".
+     */
+    public void Game(MouseEvent mouseEvent) {
         Game.setVisible(true);
         Play.setVisible(false);
         Player.setVisible(false);
     }
 
-    public void NewGame(MouseEvent mouseEvent) {        //affiche le menu NewGame
+    /**
+     * Affiche le menu "NewGame" et masque les menus "Game" et "Player".
+     */
+    public void NewGame(MouseEvent mouseEvent) {
         Play.setVisible(true);
         Game.setVisible(false);
         Player.setVisible(false);
     }
 
-    public void Player(MouseEvent mouseEvent) {         //affiche le menu Player
+    /**
+     * Affiche le menu "Player" et masque les menus "Play" et "Game".
+     * Masque également le bouton "Ready".
+     */
+    public void Player(MouseEvent mouseEvent) {
         Player.setVisible(true);
         Play.setVisible(false);
         Game.setVisible(false);
         Ready.setVisible(false);
     }
 
-    public void timeset5(Event event){                   //set le timer a 5 minutes
+    /**
+     * Réglage du timer à 5 minutes.
+     */
+    public void timeset5(Event event) {
         TimerChooser.setText("     5 min    ");
         timerW.setText("5:00");
         timerB.setText("5:00");
@@ -79,7 +92,10 @@ public class FullViewController {
         timeline.stop();
     }
 
-    public void timeset10(Event event) {                // set le timer a 10 minutes
+    /**
+     * Réglage du timer à 10 minutes.
+     */
+    public void timeset10(Event event) {
         TimerChooser.setText("    10 min    ");
         timerW.setText("10:00");
         timerB.setText("10:00");
@@ -87,44 +103,73 @@ public class FullViewController {
         timeline.stop();
     }
 
-    public void timeset15(Event event) {                //set le timer a 15 minutes
+    /**
+     * Réglage du timer à 15 minutes.
+     */
+    public void timeset15(Event event) {
         TimerChooser.setText("    15 min    ");
         timerW.setText("15:00");
         timerB.setText("15:00");
         timeSeconds = 900; // 15 minutes en secondes
         timeline.stop();
     }
-    public void SendBName (MouseEvent mouseEvent) {   //set le nom des noirs
+
+    /**
+     * Envoie le nom des joueurs noirs et vérifie si les noms ont été saisis.
+     * Affiche le bouton "Ready" si les noms ont été saisis.
+     */
+    public void SendBName(MouseEvent mouseEvent) {
         String Bname = BName.getText();
         NB.setText(Bname);
-        setbname=true;
+        setbname = true;
         verifName();
     }
-    public void SendWName (MouseEvent mouseEvent) {   //set le nom des blancs
+
+    /**
+     * Envoie le nom des joueurs blancs et vérifie si les noms ont été saisis.
+     * Affiche le bouton "Ready" si les noms ont été saisis.
+     */
+    public void SendWName(MouseEvent mouseEvent) {
         String Wname = WName.getText();
         NW.setText(Wname);
-        System.out.println(NW.getText());
         setwnam = true;
         verifName();
     }
 
-    public void verifName(){
-        if (!NW.getText().equals("") && !NB.getText().equals("") && setwnam == true && setbname == true){
+    /**
+     * Vérifie si les noms des joueurs ont été saisis et affiche le bouton "Ready" si oui.
+     */
+    public void verifName() {
+        if (!NW.getText().equals("") && !NB.getText().equals("") && setwnam && setbname) {
             Ready.setVisible(true);
         }
     }
 
-    public void LocalStart(MouseEvent mouseEvent) {     //start la partie locale
-        if (setwnam == true && setbname == true) {
+    /**
+     * Lance la partie locale après avoir vérifié que les noms des joueurs ont été saisis.
+     * Affiche le plateau de jeu et masque les menus "Game", "Play" et "Player".
+     * Enregistre les noms des joueurs dans un fichier CSV.
+     */
+    public void LocalStart(MouseEvent mouseEvent) {
             Gameplay.setVisible(true);
             Game.setVisible(false);
             Play.setVisible(false);
             Player.setVisible(false);
             CSVManager.Joueurs(WName.getText(), BName.getText());
             start();
-        }
     }
-    public void start(){
+
+    /**
+     * Fonction pour lancer une partie contre un bot (non aboutie).
+     */
+    public void botStart(MouseEvent mouseEvent) {
+        System.out.println("Presque là...");
+    }
+
+    /**
+     * Lance la partie, affiche le plateau de jeu et initialise les pièces.
+     */
+    public void start() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/exemple/sae201/View/BoardView.fxml"));
         loader.setController(new BoardController());
         try {
@@ -139,15 +184,28 @@ public class FullViewController {
         System.out.println(Arrays.deepToString(Board.board));
         boardController.initDeplacement();
     }
-    public void FFB(MouseEvent mouseEvent){
+
+    /**
+     * Réinitialise la partie et affiche les blancs gagnant.
+     */
+    public void FFB(MouseEvent mouseEvent) {
         reset();
-        CSVManager.Resultats(CSVManager.getNoms().get(CSVManager.getNoms().size()-1), CSVManager.getNoms().get(CSVManager.getNoms().size()-2),'w');
+        CSVManager.Resultats(CSVManager.getNoms().get(CSVManager.getNoms().size() - 1), CSVManager.getNoms().get(CSVManager.getNoms().size() - 2), 'w');
     }
-    public void FFW(MouseEvent mouseEvent){
+
+    /**
+     * Réinitialise la partie et affiche les noirs gagnant.
+     */
+    public void FFW(MouseEvent mouseEvent) {
         reset();
-        CSVManager.Resultats(CSVManager.getNoms().get(CSVManager.getNoms().size()-1), CSVManager.getNoms().get(CSVManager.getNoms().size()-2),'b');
+        CSVManager.Resultats(CSVManager.getNoms().get(CSVManager.getNoms().size() - 1), CSVManager.getNoms().get(CSVManager.getNoms().size() - 2), 'b');
     }
-    public void reset(){
+
+    /**
+     * Réinitialise l'affichage en masquant le plateau de jeu et en affichant les menus appropriés.
+     * Réaffiche également le plateau de jeu en chargeant à nouveau le fichier FXML.
+     */
+    public void reset() {
         Play.setVisible(true);
         Gameplay.setVisible(false);
         Game.setVisible(false);
@@ -162,15 +220,27 @@ public class FullViewController {
         boardContainer.getChildren().clear();
         boardContainer.getChildren().add(boardView);
     }
-    public void tournopen(MouseEvent mouseEvent){
+
+    /**
+     * Affiche la section "Tournament" et masque la section "Partie".
+     */
+    public void tournopen(MouseEvent mouseEvent) {
         Partie.setVisible(false);
         Tournament.setVisible(true);
     }
+
+    /**
+     * Affiche la section "Partie" et masque la section "Tournament".
+     */
     public void tourquit(MouseEvent mouseEvent) {
         Partie.setVisible(true);
         Tournament.setVisible(false);
     }
-    public void tourstart(MouseEvent mouseEvent){
+
+    /**
+     * Fonction pour démarrer un tournoi entre joueurs (non aboutie).
+     */
+    public void tourstart(MouseEvent mouseEvent) {
         String J1 = j1.getText();
         String J2 = j2.getText();
         String J3 = j3.getText();
@@ -187,16 +257,21 @@ public class FullViewController {
         DMG2.setText(J6);
         DMP1.setText(J3);
         DMP2.setText(J8);
-
     }
 
+    /**
+     * Affiche le menu pour choisir le mode de jeu (local ou contre l'ordinateur).
+     */
     public void setGamemode(MouseEvent mouseEvent) {
         listeParties.setVisible(false);
         modeLabel.setVisible(true);
         btnLocal.setVisible(true);
         btnBot.setVisible(true);
-
     }
+
+    /**
+     * Affiche l'historique des parties jouées.
+     */
     public void setHistorique(MouseEvent mouseEvent) {
         modeLabel.setVisible(false);
         btnLocal.setVisible(false);
@@ -204,22 +279,22 @@ public class FullViewController {
         listeParties.getChildren().clear();
         for (String partie : CSVManager.getParties()) {
             String[] resultat = partie.split(",");
-            if (partie.charAt(partie.length()-1) == 'w'){
-                Label label = new Label(resultat[0]+" : 1 / "+resultat[1]+" : 0");
+            if (partie.charAt(partie.length() - 1) == 'w') {
+                Label label = new Label(resultat[0] + " : 1 / " + resultat[1] + " : 0");
                 label.setStyle("-fx-font-size: 18px;-fx-text-fill: white;");
                 listeParties.getChildren().add(label);
-            }
-            else {
-                Label label = new Label(resultat[1]+" : 1 / "+resultat[0]+" : 0");
+            } else {
+                Label label = new Label(resultat[1] + " : 1 / " + resultat[0] + " : 0");
                 label.setStyle("-fx-font-size: 18px;-fx-text-fill: white;");
                 listeParties.getChildren().add(label);
-
             }
 
         }
         listeParties.setVisible(true);
-
     }
+    /**
+     * Affiche la liste des joueurs dans une VBox.
+     */
     public void afficherJoueur(MouseEvent mouseEvent) {
         vs.setVisible(false);
         ZoneB.setVisible(false);
@@ -232,6 +307,9 @@ public class FullViewController {
         }
         listeJoueurs.setVisible(true);
     }
+    /**
+     * Affiche les zones de nom des joueurs et masque la liste des joueurs.
+     */
     public void enterName(MouseEvent mouseEvent) {
         listeJoueurs.setVisible(false);
         vs.setVisible(true);

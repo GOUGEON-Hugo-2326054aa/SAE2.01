@@ -7,14 +7,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Gestionnaire de fichiers CSV pour les joueurs et les résultats des parties.
+ */
 public class CSVManager {
     private static final String fichierJoueurs = "src/main/resources/com/exemple/sae201/Joueurs.csv";
     private static final String fichierResultat = "src/main/resources/com/exemple/sae201/Resultats.csv";
 
     /**
-     *
-     * @param joueur1
-     * @param joueur2
+     * Ajoute les noms des joueurs à la liste de joueurs enregistrés.
+     * @param joueur1 Nom du premier joueur.
+     * @param joueur2 Nom du deuxième joueur.
      */
     public static void Joueurs(String joueur1, String joueur2) {
         try (FileWriter writer = new FileWriter(fichierJoueurs, true)) {
@@ -32,10 +35,10 @@ public class CSVManager {
     }
 
     /**
-     *
-     * @param blancs
-     * @param noirs
-     * @param gagnant
+     * Enregistre les résultats de la partie.
+     * @param blancs Nom du joueur avec les pièces blanches.
+     * @param noirs Nom du joueur avec les pièces noires.
+     * @param gagnant Couleur du joueur gagnant ('w' ou 'b').
      */
     public static void Resultats(String blancs, String noirs, char gagnant) {
         try (FileWriter writer = new FileWriter(fichierResultat, true)) {
@@ -51,8 +54,8 @@ public class CSVManager {
     }
 
     /**
-     *
-     * @return
+     * Récupère la liste des noms des joueurs enregistrés.
+     * @return Liste des noms des joueurs.
      */
     public static List<String> getNoms() {
         List<String> nomJoueurs = new ArrayList<>();
@@ -68,6 +71,10 @@ public class CSVManager {
         return nomJoueurs;
     }
 
+    /**
+     * Récupère la liste des résultats des parties enregistrées.
+     * @return Liste des résultats des parties.
+     */
     public static List<String> getParties() {
         List<String> gameResults = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fichierResultat))) {

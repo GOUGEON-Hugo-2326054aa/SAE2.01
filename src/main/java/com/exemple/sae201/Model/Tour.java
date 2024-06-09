@@ -1,10 +1,20 @@
 package com.exemple.sae201.Model;
 
+/**
+ * Classe représentant une tour dans un jeu d'échecs.
+ */
 public class Tour extends Piece {
+    // Constructeur
     public Tour(char couleur, int x, int y) {
         super(couleur, x, y);
     }
 
+    /**
+     * Vérifie si la tour peut se déplacer à une certaine position.
+     * @param x La nouvelle position horizontale.
+     * @param y La nouvelle position verticale.
+     * @return True si le déplacement est possible, False sinon.
+     */
     @Override
     public boolean peutBouger(int x, int y) {
         if (getX() == x || getY() == y) {
