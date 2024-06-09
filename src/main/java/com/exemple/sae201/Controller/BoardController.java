@@ -70,7 +70,7 @@ public class BoardController {
                     if (pionCapture instanceof Roi) {
                         FullViewController fullController = MainApp.loader.getController();
                         fullController.reset();
-                        CSVManager.Resultats(CSVManager.getNoms().get(-1), CSVManager.getNoms().get(-2), pionChoisi.getCouleur());
+                        CSVManager.Resultats(CSVManager.getNoms().get(CSVManager.getNoms().size()-1), CSVManager.getNoms().get(CSVManager.getNoms().size()-2), pionChoisi.getCouleur());
                     }
                 }
 
@@ -78,7 +78,11 @@ public class BoardController {
         }
     }
 
-
+    /**
+     *
+     * @param x
+     * @param y
+     */
     private void affichage(int x, int y) {
         StackPane newTuile = getCase(gridPane, x, y);
         StackPane tuile = getCase(gridPane, pionChoisi.getX(), pionChoisi.getY());
@@ -90,7 +94,13 @@ public class BoardController {
 
     }
 
-
+    /**
+     *
+     * @param gridPane
+     * @param x
+     * @param y
+     * @return
+     */
     private StackPane getCase(GridPane gridPane, int x, int y) {
         for (Node node : gridPane.getChildren()) {
             if (GridPane.getColumnIndex(node) == x && GridPane.getRowIndex(node) == y) {
@@ -100,6 +110,10 @@ public class BoardController {
         return null;
     }
 
+    /**
+     *
+     * @param actTuile
+     */
     private void selectionCouleur(StackPane actTuile) {
         if (prevTuile != null) {
             prevTuile.setStyle(prevCouleur);

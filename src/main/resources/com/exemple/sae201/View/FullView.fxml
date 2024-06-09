@@ -580,56 +580,68 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="400.0">
                            <children>
-                              <Button mnemonicParsing="false" onMouseClicked="#setgamemode" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #21201d;" text="Mode" textFill="WHITE">
+                              <Button mnemonicParsing="false" onMouseClicked="#setGamemode" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #21201d;" text="Mode" textFill="WHITE">
                                  <HBox.margin>
                                     <Insets right="20.0" />
                                  </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Button>
-                              <Button mnemonicParsing="false" onMouseClicked="#sethistoric" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #21201d;" text="Historique" textFill="WHITE" />
+                              <Button mnemonicParsing="false" onMouseClicked="#setHistorique" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #21201d;" text="Historique" textFill="WHITE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
                            </children>
                         </HBox>
-                        <Label text="Choisissez un mode de jeu" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font size="22.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="25.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Button maxHeight="75.0" maxWidth="350.0" minHeight="75.0" minWidth="350.0" mnemonicParsing="false" onMouseClicked="#Player" prefHeight="75.0" prefWidth="350.0" style="-fx-background-color: #9acd32;" text="   Jouer en Local     " textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="100.0" />
-                           </VBox.margin>
-                           <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/localplay.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <Button layoutX="35.0" layoutY="223.0" maxHeight="75.0" maxWidth="350.0" minHeight="75.0" minWidth="350.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="350.0" style="-fx-background-color: #0000004a;" text="Jouer contre un Bot" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="125.0" />
-                           </VBox.margin>
-                           <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/bot.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
+                        <StackPane>
+                           <VBox fx:id="listeParties" spacing="10" alignment="CENTER" visible="false"></VBox>
+                           <VBox alignment="CENTER">
+                              <Label fx:id="modeLabel" text="Choisissez un mode de jeu" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="25.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Button fx:id="btnLocal" maxHeight="75.0" maxWidth="350.0" minHeight="75.0" minWidth="350.0" mnemonicParsing="false" onMouseClicked="#Player" prefHeight="75.0" prefWidth="350.0" style="-fx-background-color: #9acd32;" text="   Jouer en Local     " textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="100.0" />
+                                 </VBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/localplay.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnBot" layoutX="35.0" layoutY="223.0" maxHeight="75.0" maxWidth="350.0" minHeight="75.0" minWidth="350.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="350.0" style="-fx-background-color: #0000004a;" text="Jouer contre un Bot" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="125.0" />
+                                 </VBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/bot.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </VBox>
+                        </StackPane>
+
+
                      </children>
+
                   </VBox>
                   <VBox fx:id="Player" alignment="TOP_CENTER" maxWidth="400.0" minWidth="400.0" prefHeight="950.0" prefWidth="400.0" style="-fx-background-color: #262522;" visible="false">
                      <children>
@@ -690,96 +702,102 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="400.0">
                            <children>
-                              <Button mnemonicParsing="false" onMouseClicked="#printnom" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #21201d;" text="Nom" textFill="WHITE">
+                              <Button mnemonicParsing="false" onMouseClicked="#enterName" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #21201d;" text="Nom" textFill="WHITE">
                                  <HBox.margin>
                                     <Insets right="20.0" />
                                  </HBox.margin>
                               </Button>
-                              <Button mnemonicParsing="false" onMouseClicked="#printjoueur" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #21201d;" text="Joueurs" textFill="WHITE" />
+                              <Button mnemonicParsing="false" onMouseClicked="#afficherJoueur" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #21201d;" text="Joueurs" textFill="WHITE" />
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/image-removebg-preview.png" />
-                                 </image>
-                              </ImageView>
-                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="VS" textAlignment="CENTER">
-                                 <font>
-                                    <Font size="66.0" />
-                                 </font>
-                              </Text>
-                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/bn.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                           <VBox.margin>
-                              <Insets top="50.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox fx:id="ZoneB" layoutX="10.0" layoutY="70.0" prefHeight="50.0" prefWidth="400.0">
-                           <children>
-                              <TextField fx:id="BName" maxWidth="350.0" prefHeight="50.0" prefWidth="340.0" promptText="Nom du joueur Noir">
-                                 <font>
-                                    <Font size="25.0" />
-                                 </font>
-                                 <cursor>
-                                    <Cursor fx:constant="TEXT" />
-                                 </cursor>
-                                 <HBox.margin>
-                                    <Insets left="5.0" />
-                                 </HBox.margin>
-                              </TextField>
-                              <Button mnemonicParsing="false" onMouseClicked="#SendBName" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #9acd32;">
-                                 <graphic>
-                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../img/check.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Button>
-                           </children>
-                           <VBox.margin>
-                              <Insets top="75.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox fx:id="ZoneW" prefHeight="50.0" prefWidth="400.0">
-                           <children>
-                              <TextField fx:id="WName" maxWidth="350.0" prefHeight="50.0" prefWidth="340.0" promptText="Nom du joueur Blanc">
-                                 <font>
-                                    <Font size="25.0" />
-                                 </font>
-                                 <cursor>
-                                    <Cursor fx:constant="TEXT" />
-                                 </cursor>
-                                 <HBox.margin>
-                                    <Insets left="5.0" />
-                                 </HBox.margin>
-                              </TextField>
-                              <Button mnemonicParsing="false" onMouseClicked="#SendWName" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #9acd32;">
-                                 <graphic>
-                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../img/check.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Button>
-                           </children>
-                           <VBox.margin>
-                              <Insets top="50.0" />
-                           </VBox.margin>
-                        </HBox>
+
+                        <StackPane>
+                        <VBox>
+                           <HBox fx:id="vs" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <children>
+                                 <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../img/image-removebg-preview.png" />
+                                    </image>
+                                 </ImageView>
+                                 <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="VS" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="66.0" />
+                                    </font>
+                                 </Text>
+                                 <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../img/bn.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                              <VBox.margin>
+                                 <Insets top="50.0" />
+                              </VBox.margin>
+                           </HBox>
+                           <HBox fx:id="ZoneB" layoutX="10.0" layoutY="70.0" prefHeight="50.0" prefWidth="400.0">
+                              <children>
+                                 <TextField fx:id="BName" maxWidth="350.0" prefHeight="50.0" prefWidth="340.0" promptText="Nom du joueur Noir">
+                                    <font>
+                                       <Font size="25.0" />
+                                    </font>
+                                    <cursor>
+                                       <Cursor fx:constant="TEXT" />
+                                    </cursor>
+                                    <HBox.margin>
+                                       <Insets left="5.0" />
+                                    </HBox.margin>
+                                 </TextField>
+                                 <Button mnemonicParsing="false" onMouseClicked="#SendBName" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #9acd32;">
+                                    <graphic>
+                                       <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                             <Image url="@../img/check.png" />
+                                          </image>
+                                       </ImageView>
+                                    </graphic>
+                                    <cursor>
+                                       <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                 </Button>
+                              </children>
+                              <VBox.margin>
+                                 <Insets top="75.0" />
+                              </VBox.margin>
+                           </HBox>
+                           <HBox fx:id="ZoneW" prefHeight="50.0" prefWidth="400.0">
+                              <children>
+                                 <TextField fx:id="WName" maxWidth="350.0" prefHeight="50.0" prefWidth="340.0" promptText="Nom du joueur Blanc">
+                                    <font>
+                                       <Font size="25.0" />
+                                    </font>
+                                    <cursor>
+                                       <Cursor fx:constant="TEXT" />
+                                    </cursor>
+                                    <HBox.margin>
+                                       <Insets left="5.0" />
+                                    </HBox.margin>
+                                 </TextField>
+                                 <Button mnemonicParsing="false" onMouseClicked="#SendWName" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #9acd32;">
+                                    <graphic>
+                                       <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                             <Image url="@../img/check.png" />
+                                          </image>
+                                       </ImageView>
+                                    </graphic>
+                                    <cursor>
+                                       <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                 </Button>
+                              </children>
+                              <VBox.margin>
+                                 <Insets top="50.0" />
+                              </VBox.margin>
+                           </HBox>
+                        </VBox>
+                           <VBox fx:id="listeJoueurs" spacing="10" alignment="TOP_CENTER" visible="false"></VBox>
+                        </StackPane>
                         <HBox fx:id="Playbutton" alignment="CENTER" prefHeight="50.0" prefWidth="300.0">
                            <children>
                               <Button fx:id="Ready" mnemonicParsing="false" onMouseClicked="#LocalStart" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #9acd32;" text="Jouer" textFill="WHITE">

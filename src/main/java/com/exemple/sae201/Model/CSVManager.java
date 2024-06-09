@@ -11,6 +11,11 @@ public class CSVManager {
     private static final String fichierJoueurs = "src/main/resources/com/exemple/sae201/Joueurs.csv";
     private static final String fichierResultat = "src/main/resources/com/exemple/sae201/Resultats.csv";
 
+    /**
+     *
+     * @param joueur1
+     * @param joueur2
+     */
     public static void Joueurs(String joueur1, String joueur2) {
         try (FileWriter writer = new FileWriter(fichierJoueurs, true)) {
             if (!getNoms().contains(joueur1)) {
@@ -25,6 +30,13 @@ public class CSVManager {
             e.printStackTrace();
         }
     }
+
+    /**
+     *
+     * @param blancs
+     * @param noirs
+     * @param gagnant
+     */
     public static void Resultats(String blancs, String noirs, char gagnant) {
         try (FileWriter writer = new FileWriter(fichierResultat, true)) {
             writer.append(blancs)
@@ -38,6 +50,10 @@ public class CSVManager {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public static List<String> getNoms() {
         List<String> nomJoueurs = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fichierJoueurs))) {
@@ -50,5 +66,19 @@ public class CSVManager {
             e.printStackTrace();
         }
         return nomJoueurs;
+    }
+
+    public static List<String> getParties() {
+        List<String> gameResults = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(fichierResultat))) {
+            String line = br.readLine();
+            while (line != null) {
+                gameResults.add(line.trim());
+                line = br.readLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return gameResults;
     }
 }
