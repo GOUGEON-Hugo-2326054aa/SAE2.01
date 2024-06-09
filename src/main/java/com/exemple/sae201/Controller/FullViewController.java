@@ -1,18 +1,25 @@
 //controller
 package com.exemple.sae201.Controller;
 
+import com.exemple.sae201.Model.Board;
+import com.exemple.sae201.Model.CSVManager;
 import javafx.animation.Timeline;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
+
+import java.io.IOException;
+import java.util.Arrays;
 
 public class FullViewController {
 
@@ -38,6 +45,9 @@ public class FullViewController {
     private int timeSeconds;
     private StackPane currentcase;
     private boolean setbname,setwnam = false;
+    private GridPane boardView ;
+    @FXML
+    private StackPane boardContainer;
 
     public void Game(MouseEvent mouseEvent) {           //affiche le menu Game
         Game.setVisible(true);
@@ -85,15 +95,18 @@ public class FullViewController {
         String Bname = BName.getText();
         NB.setText(Bname);
         setbname=true;
-        if (setwnam == true && setbname == true) {
-            Ready.setVisible(true);
-        }
+        verifName();
     }
     public void SendWName (MouseEvent mouseEvent) {   //set le nom des blancs
         String Wname = WName.getText();
         NW.setText(Wname);
+        System.out.println(NW.getText());
         setwnam = true;
-        if (setwnam == true && setbname == true){
+        verifName();
+    }
+
+    public void verifName(){
+        if (!NW.getText().equals("") && !NB.getText().equals("") && setwnam == true && setbname == true){
             Ready.setVisible(true);
         }
     }
@@ -104,19 +117,47 @@ public class FullViewController {
             Game.setVisible(false);
             Play.setVisible(false);
             Player.setVisible(false);
+            CSVManager.Joueurs(WName.getText(), BName.getText());
+            start();
         }
     }
+    public void start(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/exemple/sae201/View/BoardView.fxml"));
+        loader.setController(new BoardController());
+        try {
+            boardView = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        boardContainer.getChildren().clear();
+        boardContainer.getChildren().add(boardView);
+        BoardController boardController = loader.getController();
+        Board.initPieces();
+        System.out.println(Arrays.deepToString(Board.board));
+        boardController.initDeplacement();
+    }
     public void FFB(MouseEvent mouseEvent){
-        Play.setVisible(true);
-        Gameplay.setVisible(false);
-        Game.setVisible(false);
-        Player.setVisible(false);
+        reset();
+        CSVManager.Resultats(CSVManager.getNoms().get(CSVManager.getNoms().size()-1), CSVManager.getNoms().get(CSVManager.getNoms().size()-2),'w');
     }
     public void FFW(MouseEvent mouseEvent){
+        reset();
+        CSVManager.Resultats(CSVManager.getNoms().get(CSVManager.getNoms().size()-1), CSVManager.getNoms().get(CSVManager.getNoms().size()-2),'b');
+    }
+    public void reset(){
         Play.setVisible(true);
         Gameplay.setVisible(false);
         Game.setVisible(false);
         Player.setVisible(false);
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/exemple/sae201/View/BoardView.fxml"));
+        try {
+            boardView = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        boardContainer.getChildren().clear();
+        boardContainer.getChildren().add(boardView);
     }
     public void tournopen(MouseEvent mouseEvent){
         Partie.setVisible(false);

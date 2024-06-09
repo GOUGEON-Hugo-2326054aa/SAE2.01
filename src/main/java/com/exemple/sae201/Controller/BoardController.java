@@ -1,11 +1,15 @@
 package com.exemple.sae201.Controller;
 
+import com.exemple.sae201.MainApp;
 import com.exemple.sae201.Model.Board;
+import com.exemple.sae201.Model.CSVManager;
 import com.exemple.sae201.Model.Piece;
+import com.exemple.sae201.Model.Roi;
 import javafx.css.Style;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 
@@ -19,6 +23,7 @@ public class BoardController {
     private StackPane prevTuile = null;
     private String prevCouleur = null;
     private boolean tour = true;
+    private MainApp mainApp;
 
     public void initDeplacement() {
         for (int ligne = 0; ligne < 8; ligne++) {
@@ -49,6 +54,7 @@ public class BoardController {
         } else {
             if (pionChoisi.peutBouger(x, y)) {
                 if (Piece.mouvementValide(pionChoisi, x, y)) {
+                    Piece pionCapture = Board.board[y][x];
                     Board.board[pionChoisi.getY()][pionChoisi.getX()] = null;
                     Board.board[y][x] = pionChoisi;
                     affichage(x, y);
@@ -60,6 +66,11 @@ public class BoardController {
                         prevTuile.setStyle(prevCouleur);
                         prevTuile = null;
                         prevCouleur = null;
+                    }
+                    if (pionCapture instanceof Roi) {
+                        FullViewController fullController = MainApp.loader.getController();
+                        fullController.reset();
+                        CSVManager.Resultats(CSVManager.getNoms().get(-1), CSVManager.getNoms().get(-2), pionChoisi.getCouleur());
                     }
                 }
 
