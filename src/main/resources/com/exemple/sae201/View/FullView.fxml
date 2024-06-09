@@ -10,17 +10,14 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="950.0" maxWidth="1320.0" minHeight="950.0" minWidth="1320.0" prefHeight="950.0" prefWidth="1320.0" style="-fx-background-color: #302e2b;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exemple.sae201.Controller.FullViewController">
+<Pane maxHeight="950.0" maxWidth="1320.0" minHeight="950.0" minWidth="1320.0" prefHeight="950.0" prefWidth="1320.0" style="-fx-background-color: #302e2b;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exemple.sae201.Controller.FullViewController">
    <children>
       <BorderPane fx:id="Tournament" maxHeight="950.0" maxWidth="1320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1320.0">
          <left>
@@ -183,70 +180,139 @@
          <right>
             <VBox maxWidth="200.0" prefHeight="828.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextField promptText="Joueur 1">
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Classement">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="40.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="1 er">
+                     <font>
+                        <Font size="35.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="50.0" />
+                        <Insets top="5.0" />
                      </VBox.margin>
-                  </TextField>
-                  <TextField promptText="Joueur 8">
+                  </Text>
+                  <Label fx:id="DMG11" alignment="CENTER" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="premier" textFill="WHITE">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="30.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="70.0" />
+                        <Insets />
                      </VBox.margin>
-                  </TextField>
-                  <TextField promptText="Joueur 2">
+                  </Label>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="2 eme">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="35.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="70.0" />
+                        <Insets top="5.0" />
                      </VBox.margin>
-                  </TextField>
-                  <TextField promptText="Joueur 3">
+                  </Text>
+                  <Label fx:id="DMG12" alignment="CENTER" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="deuxieme" textFill="WHITE">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="30.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="70.0" />
+                        <Insets />
                      </VBox.margin>
-                  </TextField>
-                  <TextField promptText="Joueur 4">
+                  </Label>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="3 eme">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="35.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="70.0" />
+                        <Insets top="5.0" />
                      </VBox.margin>
-                  </TextField>
-                  <TextField promptText="Joueur 5">
+                  </Text>
+                  <Label fx:id="DMG13" alignment="CENTER" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="troisieme" textFill="WHITE">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="30.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="70.0" />
+                        <Insets />
                      </VBox.margin>
-                  </TextField>
-                  <TextField promptText="Joueur 6">
+                  </Label>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="4 eme">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="35.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="70.0" />
+                        <Insets top="5.0" />
                      </VBox.margin>
-                  </TextField>
-                  <TextField promptText="Joueur 7">
+                  </Text>
+                  <Label fx:id="DMG14" alignment="CENTER" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="quatrieme" textFill="WHITE">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="30.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="70.0" />
+                        <Insets />
                      </VBox.margin>
-                  </TextField>
+                  </Label>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="5 eme">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Label fx:id="DMG15" alignment="CENTER" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="cinquieme" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="6 eme">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Label fx:id="DMG16" alignment="CENTER" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="sixieme" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="7 eme">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Label fx:id="DMG17" alignment="CENTER" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="septieme" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="8 eme">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Label fx:id="DMG18" alignment="CENTER" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: #0000004a;" text="huitieme" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
                </children>
             </VBox>
          </right>
@@ -267,7 +333,7 @@
             </HBox>
          </bottom>
       </BorderPane>
-      <HBox fx:id="Partie"  alignment="CENTER" maxHeight="920.0" maxWidth="1320.0" minHeight="950.0" minWidth="1320.0" prefHeight="950.0" prefWidth="1320.0" style="-fx-background-color:#302e2b">
+      <HBox fx:id="Partie" alignment="CENTER" maxHeight="920.0" maxWidth="1320.0" minHeight="950.0" minWidth="1320.0" prefHeight="950.0" prefWidth="1320.0" style="-fx-background-color:#302e2b" visible="false">
          <children>
             <VBox alignment="BASELINE_CENTER" prefWidth="800.0">
                <children>
@@ -303,9 +369,9 @@
                         </StackPane>
                      </children>
                   </HBox>
-                  <StackPane minHeight="800" minWidth="800" fx:id="boardContainer">
+                  <StackPane fx:id="boardContainer" minHeight="800" minWidth="800">
                      <children>
-                        <fx:include source="BoardView.fxml"></fx:include>
+                        <fx:include source="BoardView.fxml" />
                      </children>
                   </StackPane>
                   <HBox alignment="TOP_CENTER" minHeight="60.0" prefHeight="75.0" prefWidth="800.0">
