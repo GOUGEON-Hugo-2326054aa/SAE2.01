@@ -1,6 +1,7 @@
 //controller
 package com.exemple.sae201.Controller;
 
+import com.exemple.sae201.Model.Board;
 import javafx.animation.Timeline;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -17,6 +18,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
+import java.util.Arrays;
+
 
 public class FullViewController {
 
@@ -45,7 +48,6 @@ public class FullViewController {
     private GridPane boardView ;
     @FXML
     private StackPane boardContainer;
-    private FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/exemple/sae201/View/BoardView.fxml"));
 
     public void Game(MouseEvent mouseEvent) {           //affiche le menu Game
         Game.setVisible(true);
@@ -112,11 +114,14 @@ public class FullViewController {
             Game.setVisible(false);
             Play.setVisible(false);
             Player.setVisible(false);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/exemple/sae201/View/BoardView.fxml"));
             loader.setController(new BoardController());
             boardView = loader.load();
-            reset();
+            boardContainer.getChildren().clear();
+            boardContainer.getChildren().add(boardView);
             BoardController boardController = loader.getController();
-            boardController.initPieces();
+            Board.initPieces();
+            System.out.println(Arrays.deepToString(Board.board));
             boardController.initDeplacement();
         }
     }
@@ -125,19 +130,22 @@ public class FullViewController {
         Gameplay.setVisible(false);
         Game.setVisible(false);
         Player.setVisible(false);
-        reset();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/exemple/sae201/View/BoardView.fxml"));
+        boardView = loader.load();
+        boardContainer.getChildren().clear();
+        boardContainer.getChildren().add(boardView);
     }
     public void FFW(MouseEvent mouseEvent) throws IOException {
         Play.setVisible(true);
         Gameplay.setVisible(false);
         Game.setVisible(false);
         Player.setVisible(false);
-        reset();
-    }
-    private void reset() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/exemple/sae201/View/BoardView.fxml"));
+        boardView = loader.load();
         boardContainer.getChildren().clear();
         boardContainer.getChildren().add(boardView);
     }
+
     public void tournopen(MouseEvent mouseEvent){
         Partie.setVisible(false);
         Tournament.setVisible(true);

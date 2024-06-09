@@ -4,6 +4,7 @@ public abstract class Piece {
     private char couleur;
     private int x;
     private int y;
+    protected Board tableau = new Board();
 
     public Piece(char couleur, int x, int y) {
         this.couleur = couleur;

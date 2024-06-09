@@ -7,24 +7,17 @@ public class Pion extends Piece{
 
     @Override
     public boolean peutBouger(int x, int y) {
-        int dy = y - getY();
-        int dx = x - getX();
+        int depY = Math.abs(y - getY());
+        int depX = Math.abs(x - getX());
 
-        if (getCouleur() == 'w') {
-            if (dy == -1 && dx == 0) {
+        if (Board.board[y][x] == null) {
+            if (depY == 1 && depX == 0) {
                 return true;
             }
-            if (getY() == 6 && dy == -2 && dx == 0) {
+            if ((getY() == 1 || getY() == 6)&& depY == 2 && depX == 0) {
                 return true;
             }
-        } else {
-            if (dy == 1 && dx == 0) {
-                return true;
-            }
-            if (getY() == 1 && dy == 2 && dx == 0) {
-                return true;
-            }
-        }
+        } else return depY == 1 && depX == 1;
 
         return false;
     }
