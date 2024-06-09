@@ -32,5 +32,16 @@ public abstract class Piece {
         this.y = y;
     }
 
+    public static boolean mouvementValide(Piece piece, int x, int y) {
+        char equipe = piece.getCouleur();
+        Piece save = Board.board[y][x];
+        Board.board[y][x] = piece;
+        Board.board[piece.getY()][piece.getX()] = null;
+        boolean validation = !Roi.estEchec(equipe);
+        Board.board[piece.getY()][piece.getX()] = piece;
+        Board.board[y][x] = save;
+        return validation;
+    }
+
     public abstract boolean peutBouger(int newX, int newY);
 }

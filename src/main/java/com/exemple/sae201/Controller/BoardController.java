@@ -2,26 +2,23 @@ package com.exemple.sae201.Controller;
 
 import com.exemple.sae201.Model.Board;
 import com.exemple.sae201.Model.Piece;
-import com.exemple.sae201.Model.Pion;
+import javafx.css.Style;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-
-import java.io.IOException;
 
 public class BoardController {
     @FXML
     private GridPane gridPane;
     @FXML
     private StackPane boardContainer;
-    private Board tableau ;
+    private Board tableau;
     private Piece pionChoisi;
-
+    private StackPane prevTuile = null;
+    private String prevCouleur = null;
+    private boolean tour = true;
 
     public void initDeplacement() {
         for (int ligne = 0; ligne < 8; ligne++) {
@@ -30,30 +27,45 @@ public class BoardController {
                 System.out.println(tuile);
                 int finalLigne = ligne;
                 int finalColonne = colonne;
-                tuile.setOnMouseClicked(event -> deplacementJoueur(finalColonne,finalLigne));
-                }
-            }
-        }
-
-    private void deplacementJoueur(int x, int y) {
-        System.out.println(x);
-        System.out.println(y);
-        if (pionChoisi == null) {
-            pionChoisi = Board.board[y][x];
-        } else if (Board.board[y][x] != null && Board.board[y][x].getCouleur() == pionChoisi.getCouleur()) {
-            pionChoisi = Board.board[y][x];
-        } else {
-            if (pionChoisi.peutBouger(x, y)) {
-                Board.board[pionChoisi.getY()][pionChoisi.getX()] = null;
-                Board.board[y][x] = pionChoisi;
-                affichage(x, y);
-                pionChoisi.setX(x);
-                pionChoisi.setY(y);
-                pionChoisi = null;
+                tuile.setOnMouseClicked(event -> deplacementJoueur(finalColonne, finalLigne));
             }
         }
     }
 
+    private void deplacementJoueur(int x, int y) {
+        System.out.println(x);
+        System.out.println(y);
+        StackPane tuile = getCase(gridPane, x, y);
+        char equipe = tour ? 'w' : 'b';
+        if (pionChoisi == null) {
+            if ((tour && Board.board[y][x] != null && Board.board[y][x].getCouleur() == 'w') ||
+                    (!tour && Board.board[y][x] != null && Board.board[y][x].getCouleur() == 'b')) {
+                pionChoisi = Board.board[y][x];
+                selectionCouleur(tuile);
+            }
+        } else if (Board.board[y][x] != null && Board.board[y][x].getCouleur() == pionChoisi.getCouleur()) {
+            pionChoisi = Board.board[y][x];
+            selectionCouleur(tuile);
+        } else {
+            if (pionChoisi.peutBouger(x, y)) {
+                if (Piece.mouvementValide(pionChoisi, x, y)) {
+                    Board.board[pionChoisi.getY()][pionChoisi.getX()] = null;
+                    Board.board[y][x] = pionChoisi;
+                    affichage(x, y);
+                    pionChoisi.setX(x);
+                    pionChoisi.setY(y);
+                    pionChoisi = null;
+                    tour = !tour;
+                    if (prevTuile != null) {
+                        prevTuile.setStyle(prevCouleur);
+                        prevTuile = null;
+                        prevCouleur = null;
+                    }
+                }
+
+            }
+        }
+    }
 
 
     private void affichage(int x, int y) {
@@ -67,6 +79,7 @@ public class BoardController {
 
     }
 
+
     private StackPane getCase(GridPane gridPane, int x, int y) {
         for (Node node : gridPane.getChildren()) {
             if (GridPane.getColumnIndex(node) == x && GridPane.getRowIndex(node) == y) {
@@ -76,4 +89,14 @@ public class BoardController {
         return null;
     }
 
+    private void selectionCouleur(StackPane actTuile) {
+        if (prevTuile != null) {
+            prevTuile.setStyle(prevCouleur);
+        }
+        if (actTuile != null) {
+            prevCouleur = actTuile.getStyle();
+            actTuile.setStyle("-fx-background-color: #ef785f;");
+            prevTuile = actTuile;
+        }
+    }
 }
